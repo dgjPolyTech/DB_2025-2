@@ -44,5 +44,10 @@ create table 배송업체(
 create user c##test identified by 1234;
 grant dba, connect, resource to c##test; 
 
+/* alter = 특정 테이블의 구조를 수정 */
 /* 고객 컬럼 추가 */
 alter table 고객 add 가입날짜 date;
+
+/* 고객에서 가입날짜 컬럼 삭제  */
+alter table 고객 
+                drop column 가입날짜;
