@@ -51,3 +51,8 @@ alter table 고객 add 가입날짜 date;
 /* 고객에서 가입날짜 컬럼 삭제  */
 alter table 고객 
                 drop column 가입날짜;
+                
+/* 고객 테이블 제약조건(check) 추가 */
+/* 나이가 20 이상인 고객만 추가 */
+alter table 고객
+                add constraint check_age check(나이>=20);
