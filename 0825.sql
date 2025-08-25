@@ -56,3 +56,26 @@ alter table 고객
 /* 나이가 20 이상인 고객만 추가 */
 alter table 고객
                 add constraint check_age check(나이>=20);
+
+/* 제약조건 삭제 */
+alter table 고객
+                drop constraint check_age;
+                
+/* 배송업체 테이블 삭제 */
+drop table 배송업체;
+
+-- 고객 테이블에 행 삽입(추가)
+-- 고객(컬럼명들)에서 컬럼명끼리 순서는 바꿔도 됨. 값을 순서에 맞춰서 쓰기만 하면 됨)
+-- 지금처럼 모든 컬럼에 값들을 "순서대로" 넣는 상황에서는 (컬럼명들) 생략이 가능함.  
+insert into 고객(고객아이디, 고객이름, 나이, 등급, 직업, 적립금) values('apple', '정소화', 20, 'gold', '학생', 1000);
+
+--primary key인 고객아이디는 컬럼끼리 겹쳐서는 안됨.
+insert into 고객 values('banana', '김선우', 25, 'vip', '간호사', 2500);
+insert into 고객 values('carrot', '고명석', 28, 'gold', '교사', 4500);
+
+insert into 고객 values('orange', '김용욱', 25, 'silver', '학생', 0);
+insert into 고객 values('melon', '성원용', 35, 'gold', '회사원', 5000);
+insert into 고객 values('peach', '오형준', null, 'gold', '교사', 4500);
+insert into 고객 values('pear', '채광주', 31, 'silver', '회사원', 500);
+
+select * from 고객;
